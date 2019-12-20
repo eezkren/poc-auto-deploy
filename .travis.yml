@@ -1,0 +1,12 @@
+language: java
+sudo: false
+install: true
+addons:
+  sonarcloud:
+    organization: isilona-github
+    token:
+      secure: 2f121e57945095268a823a368e21865741c0d675
+jdk:
+  - oraclejdk11
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=isilona_demo-deploy
