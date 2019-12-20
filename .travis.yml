@@ -7,6 +7,11 @@ addons:
     token:
       secure: 2f121e57945095268a823a368e21865741c0d675
 jdk:
-  - oraclejdk11
+- oraclejdk11
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=isilona_demo-deploy
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=isilona_demo-deploy
+deploy:
+  provider: heroku
+  app: poc-auto-deploy
+  api_key:
+    secure: JGgU8KUVsrX/lvzerUnPdmTLhZ6gVuV1HZipHC5AqADgn76/UBFwkfkR3EtIyqnw7C2wIcCWylayK+DLRUDy3G1+XWBiygHm3wRC/3uC7V6lM38I9X9boPUeIdgUqCDx8kb7JmpzcM42tzexxmpWpqvkzkZ3NhrEUZc46+6LxfuNg0Ozn9C+Li1B+qlRxBzMkBAm981V4+W5RezXZRAC71r5JCFtdswukJbnFOpfEC9pQOTL0QH5jKvkRRzxSxRzy+D3azNqW5W2RfPh7MRgSA2jiH3SmjDLfpOi3jJqVVz28QlGJvFHlAaC7czRqzZTEbLqIpmvUEviGVqC2bU4nfjyq7XAa5gBhKH6FmRwy9d0hYQitQIYws0ALZB+B/3981ws/ZiepDujGlWoSapX/fzWslPBykL1MFRrZNi1mLq/TTJg4noItuEiqVvV0Z7Sho8AVI+l8iD6GT5frdbaSCe4Z1G99VrsMkdR2iLqIewHPHMNsN9HDziZVkgH6KJuetUh81/FxMk/qzcs1ydZilY84Va0fb8iF0hL69f4ZsUsj6CnhkuV6+K1f5SXe6CMdJ5Fqx+QI+yMuiwcFmcrCxFCx1byWDVLCWstFYBEZVZWukRrvG8rgY121YNe1sRu43eBlKXeVyoBFO6pxtq+qiwz5yivqx90n09gOrYlS3Y=
